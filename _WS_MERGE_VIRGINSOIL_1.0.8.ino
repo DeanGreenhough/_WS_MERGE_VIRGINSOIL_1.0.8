@@ -1,3 +1,9 @@
+//Author Dean Anthony Greenhough
+//Personal Home Automation Project
+//Water Softener
+
+
+
 /*
   This is an initial sketch to be used as a "blueprint" to create apps which can be used with IOTappstory.com infrastructure
   Your code can be filled wherever it is marked.
@@ -31,10 +37,10 @@
 //v1.1 ADDED BLYNK issues with BLYNK crashing
 //v1.2 Retry BLYNK - Added 1000uF CAP direct to board - issue appears to be USB isolator!!
 //v1.3 Modify to get timing back down
-//v1.3.1 Change DONEPIN from 21 to 4
+//v1.3.1 Change DONEPIN from 21 to 4 ***CONFLICT***
 //v1.3.2 Add INA219 for Vbatt move pin 22 to 32 tp clear up SDA/SCL
 //v1.3.3 Changed GPIO4 to GPIO25 as unit keeps reseting and goes into download with 4R7  connected to grd
-//v1.3.4 ADDDED TO ALLOW FOR CAPACITOR TO CHARGE BEFORE WIFI INIT****STABLE TO 3V**** IGNORE
+//v1.3.4 ADDDED TO ALLOW FOR CAPACITOR TO CHARGE BEFORE WIFI INIT****STABLE TO 3V**** IGNORE as loose wiring caused issue
 //v1.3.5 CHANGED TO LOCAL BLYNK SERVER
 //v1.3.6 PLAYING AROUND WITH BLYNK &  LOOPTIME
 //v1.3.7 ADDED WDT  FOR 10S DUE TO SERVER BEING DOWN AND SKETCH STAYS IN A LOOP
@@ -52,6 +58,7 @@
 //V1.0.5 ADDED EEPROM FOR MORE CONTROL OVER IOTAPPSTORY UPDATES AS POWER INTENSIVE - UPDATE FREQ 30 DAYS
 //V1.0.6 OTHER
 //V1.0.7 SWAP OUT EEPROM DUE TO CONFLICT, USING NVS FLASH PARTITION USING PREFERENCES
+//V1.0.8 DELETE PASSWORDS - SENSITIVE INFORMATION AS IN PUBLIC DOMAIN
 
             
 
@@ -65,9 +72,9 @@ IOTAppStory IAS(COMPDATE, MODEBUTTON);       // Initialize IotAppStory
 
 #define BLYNK_PRINT Serial
 //#define BLYNK_DEBUG                         // Optional, this enables more detailed prints
-#define mqtt_server    "192.168.0.200"        // server name or IP
-#define mqtt_user      "admin"                // username
-#define mqtt_password  "admin"                // password
+#define mqtt_server    "192.168.0.***"        // server name or IP
+#define mqtt_user      "*****"                // username
+#define mqtt_password  "*****"                // password
 #define looptime_topic "WS/looptime"          // Topic looptime
 #define battery_topic  "WS/battery"
 #define current_topic  "WS/current"
@@ -91,9 +98,9 @@ Adafruit_INA219 ina219;
 #include <Preferences.h>
 Preferences preferences;
 //CREDENTIALS
-char auth[]       = "5323a2d82e8c418fbe1bb13e78dbcc91";
-char WIFI_SSID[]  = "Limitless";
-char WIFI_PWD []  = "F41thl355";
+char auth[]       = "5**********************1";
+char WIFI_SSID[]  = "L*******s";
+char WIFI_PWD []  = "F*******5";
 //WDT SETUP
 #include "esp_system.h"
 const int wdtTimeout = 10000;  //WDT SET IN mS
